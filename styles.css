@@ -1,0 +1,20 @@
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+body {
+    font-family: Arial;
+}
+
+h1 {
+    color: blue;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 10px 0;
+}
