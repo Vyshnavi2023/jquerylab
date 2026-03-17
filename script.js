@@ -43,3 +43,33 @@ $("h2 + p").click(function(){
 $("h2 ~ p").mouseenter(function(){
     $(this).css("border", "2px solid red");
 });
+
+// 1️⃣ First element
+$("#list li:first").click(function(){
+    $(this).css("color", "red");
+});
+
+// 2️⃣ Last element
+$("#list li:last").click(function(){
+    $(this).css("color", "blue");
+});
+
+// 3️⃣ Specific index (0-based)
+$("#list li:eq(2)").click(function(){
+    $(this).css("background-color", "yellow");
+});
+
+// 4️⃣ Even index
+$("#list li:even").mouseenter(function(){
+    $(this).css("background-color", "lightgray");
+});
+
+// 5️⃣ Odd index
+$("#list li:odd").mouseenter(function(){
+    $(this).css("background-color", "lightgreen");
+});
+
+// 6️⃣ Not selector
+$("#list li:not(.skip)").dblclick(function(){
+    $(this).hide();
+});
