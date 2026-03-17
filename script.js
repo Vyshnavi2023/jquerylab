@@ -73,3 +73,31 @@ $("#list li:odd").mouseenter(function(){
 $("#list li:not(.skip)").dblclick(function(){
     $(this).hide();
 });
+
+
+
+
+// 1️⃣ Has attribute
+$("input[placeholder]").focus(function(){
+    $(this).css("border", "2px solid blue");
+});
+
+// 2️⃣ Exact value
+$("input[type='text']").click(function(){
+    $(this).css("background-color", "lightyellow");
+});
+
+// 3️⃣ Starts with
+$("a[href^='https']").mouseenter(function(){
+    $(this).css("color", "green");
+});
+
+// 4️⃣ Ends with
+$("a[href$='.org']").click(function(){
+    $(this).css("color", "red");
+});
+
+// 5️⃣ Contains
+$("a[href*='google']").dblclick(function(){
+    $(this).hide();
+});
