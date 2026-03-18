@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Traversing</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .box {
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery DOM Traversing</h1>
+
+    <!-- Structure -->
+    <div class="box" id="parent">
+        Parent
+        <div class="box" id="child">
+            Child
+            <p id="para">Paragraph</p>
+        </div>
+    </div>
+
+    <div class="box" id="siblings">
+        <p>Sibling 1</p>
+        <p id="middle">Sibling 2</p>
+        <p>Sibling 3</p>
+    </div>
+
+    <!-- Buttons -->
+    <button id="parentBtn">Parent</button>
+    <button id="parentsBtn">Parents</button>
+    <button id="childrenBtn">Children</button>
+    <button id="findBtn">Find</button>
+
+    <button id="siblingsBtn">Siblings</button>
+    <button id="nextBtn">Next</button>
+    <button id="prevBtn">Prev</button>
+
+    <button id="firstBtn">First</button>
+    <button id="lastBtn">Last</button>
+    <button id="eqBtn">Eq(1)</button>
+    <button id="filterBtn">Filter</button>
+    <button id="notBtn">Not</button>
+
+    <script>
+    $(document).ready(function(){
+
+        // Parent
+        $("#parentBtn").click(function(){
+            $("#para").parent().addClass("highlight");
+        });
+
+        // Parents
+        $("#parentsBtn").click(function(){
+            $("#para").parents().addClass("highlight");
+        });
+
+        // Children
+        $("#childrenBtn").click(function(){
+            $("#parent").children().addClass("highlight");
+        });
+
+        // Find
+        $("#findBtn").click(function(){
+            $("#parent").find("p").addClass("highlight");
+        });
+
+        // Siblings
+        $("#siblingsBtn").click(function(){
+            $("#middle").siblings().addClass("highlight");
+        });
+
+        // Next
+        $("#nextBtn").click(function(){
+            $("#middle").next().addClass("highlight");
+        });
+
+        // Prev
+        $("#prevBtn").click(function(){
+            $("#middle").prev().addClass("highlight");
+        });
+
+        // First
+        $("#firstBtn").click(function(){
+            $("#siblings p").first().addClass("highlight");
+        });
+
+        // Last
+        $("#lastBtn").click(function(){
+            $("#siblings p").last().addClass("highlight");
+        });
+
+        // Eq
+        $("#eqBtn").click(function(){
+            $("#siblings p").eq(1).addClass("highlight");
+        });
+
+        // Filter
+        $("#filterBtn").click(function(){
+            $("#siblings p").filter("#middle").addClass("highlight");
+        });
+
+        // Not
+        $("#notBtn").click(function(){
+            $("#siblings p").not("#middle").addClass("highlight");
+        });
+
+    });
+    </script>
+
+</body>
+</html>
