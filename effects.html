@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery Effects</h1>
+
+    <div id="box">Hello</div>
+
+    <button id="hideBtn">Hide</button>
+    <button id="showBtn">Show</button>
+    <button id="toggleBtn">Toggle</button>
+
+    <br><br>
+
+    <button id="fadeInBtn">Fade In</button>
+    <button id="fadeOutBtn">Fade Out</button>
+    <button id="fadeToggleBtn">Fade Toggle</button>
+    <button id="fadeToBtn">Fade To 0.3</button>
+
+    <br><br>
+
+    <button id="slideDownBtn">Slide Down</button>
+    <button id="slideUpBtn">Slide Up</button>
+    <button id="slideToggleBtn">Slide Toggle</button>
+
+    <br><br>
+
+    <button id="animateBtn">Animate</button>
+    <button id="stopBtn">Stop</button>
+
+    <script>
+    $(document).ready(function(){
+
+        // Basic Effects
+        $("#hideBtn").click(function(){
+            $("#box").hide();
+        });
+
+        $("#showBtn").click(function(){
+            $("#box").show();
+        });
+
+        $("#toggleBtn").click(function(){
+            $("#box").toggle();
+        });
+
+        // Fade Effects
+        $("#fadeInBtn").click(function(){
+            $("#box").fadeIn();
+        });
+
+        $("#fadeOutBtn").click(function(){
+            $("#box").fadeOut();
+        });
+
+        $("#fadeToggleBtn").click(function(){
+            $("#box").fadeToggle();
+        });
+
+        $("#fadeToBtn").click(function(){
+            $("#box").fadeTo(1000, 0.3);
+        });
+
+        // Slide Effects
+        $("#slideDownBtn").click(function(){
+            $("#box").slideDown();
+        });
+
+        $("#slideUpBtn").click(function(){
+            $("#box").slideUp();
+        });
+
+        $("#slideToggleBtn").click(function(){
+            $("#box").slideToggle();
+        });
+
+        // Animate
+        $("#animateBtn").click(function(){
+            $("#box").animate({
+                width: "300px",
+                height: "150px",
+                opacity: 0.5
+            }, 1000);
+        });
+
+        // Stop Animation
+        $("#stopBtn").click(function(){
+            $("#box").stop();
+        });
+
+    });
+    </script>
+
+</body>
+</html>
