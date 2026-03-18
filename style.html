@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Style Manipulation</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery Style Manipulation</h1>
+
+    <div id="box">Box</div>
+
+    <p id="text">This is a paragraph</p>
+
+    <button id="cssBtn">Change CSS</button>
+    <button id="addClassBtn">Add Class</button>
+    <button id="removeClassBtn">Remove Class</button>
+    <button id="toggleClassBtn">Toggle Class</button>
+    <button id="checkClassBtn">Check Class</button>
+
+    <script>
+    $(document).ready(function(){
+
+        // 1️⃣ css()
+        $("#cssBtn").click(function(){
+            $("#box").css({
+                "background-color": "green",
+                "color": "white"
+            });
+        });
+
+        // 2️⃣ addClass()
+        $("#addClassBtn").click(function(){
+            $("#text").addClass("highlight");
+        });
+
+        // 3️⃣ removeClass()
+        $("#removeClassBtn").click(function(){
+            $("#text").removeClass("highlight");
+        });
+
+        // 4️⃣ toggleClass()
+        $("#toggleClassBtn").click(function(){
+            $("#text").toggleClass("highlight");
+        });
+
+        // 5️⃣ hasClass()
+        $("#checkClassBtn").click(function(){
+            if($("#text").hasClass("highlight")){
+                alert("Class exists");
+            } else {
+                alert("Class not present");
+            }
+        });
+
+    });
+    </script>
+
+</body>
+</html>
