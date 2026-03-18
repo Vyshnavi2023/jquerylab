@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Events</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>jQuery Event Handling</h1>
+
+    <!-- Box for mouse events -->
+    <div id="box">Mouse Area</div>
+
+    <!-- Button -->
+    <button id="btn">Click Me</button>
+
+    <br><br>
+
+    <!-- Input for keyboard events -->
+    <input type="text" id="input" placeholder="Type something">
+
+    <br><br>
+
+    <!-- Form -->
+    <form id="form">
+        <input type="text" placeholder="Enter name">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+    $(document).ready(function(){
+
+        // 🔹 Mouse Events
+
+        $("#btn").click(function(){
+            alert("Button Clicked");
+        });
+
+        $("#btn").dblclick(function(){
+            alert("Button Double Clicked");
+        });
+
+        $("#box").mouseenter(function(){
+            $(this).css("background-color", "yellow");
+        });
+
+        $("#box").mouseleave(function(){
+            $(this).css("background-color", "lightblue");
+        });
+
+        $("#box").mousedown(function(){
+            $(this).text("Mouse Down");
+        });
+
+        $("#box").mouseup(function(){
+            $(this).text("Mouse Up");
+        });
+
+        $("#box").hover(
+            function(){ $(this).css("color", "red"); },
+            function(){ $(this).css("color", "black"); }
+        );
+
+        // 🔹 Keyboard Events
+
+        $("#input").keypress(function(){
+            console.log("Key Pressed");
+        });
+
+        $("#input").keydown(function(){
+            console.log("Key Down");
+        });
+
+        $("#input").keyup(function(){
+            console.log("Key Up");
+        });
+
+        // 🔹 Form Events
+
+        $("#form").submit(function(e){
+            e.preventDefault();
+            alert("Form Submitted");
+        });
+
+        $("#input").focus(function(){
+            $(this).css("background-color", "lightgreen");
+        });
+
+        $("#input").blur(function(){
+            $(this).css("background-color", "white");
+        });
+
+        $("#input").change(function(){
+            alert("Value Changed");
+        });
+
+        // 🔹 General Events
+
+        $("#btn").on("mouseenter", function(){
+            $(this).css("background-color", "orange");
+        });
+
+        $("#btn").off("dblclick"); // disables dblclick
+
+    });
+    </script>
+
+</body>
+</html>
